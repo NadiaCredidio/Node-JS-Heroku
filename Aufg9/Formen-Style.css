@@ -1,0 +1,103 @@
+
+html{
+	
+	@import url('https://fonts.googleapis.com/css?family=Mogra');
+	font-family: 'Mogra', cursive;
+
+}
+
+header {
+	
+	width:100%;
+	height: 3em;
+	background-color: deepskyblue;
+	text-align: center;
+	font-size: 35px;	
+	
+}
+
+fieldset{
+	
+	margin: 0.5em;
+	padding: 1em;
+	background-color: lightblue;
+	border: 0.1em solid black;
+	border-radius: 12px;
+	
+}
+
+
+legend{
+	
+	font-size: 22px;
+	text-align:center;
+	
+}
+
+div{
+	
+	float:left;
+	width: 20%;
+	height: 50%;
+	margin: 1em;
+
+}
+
+section{
+	
+	float: left;
+	width: 30%;
+	height: 50%;
+	margin: 0.5em;
+	
+}
+
+
+
+#flavors{
+	
+	float: left;
+	margin: 0em;
+	font-size: 22px;		
+}
+
+head {
+	display: none;
+}
+
+
+* {
+	display: block;
+	vertical-align: top
+}
+
+input[type="radio"], input[type="checkbox"], label {
+	display: inline;
+}
+
+label::after {
+	content:"";
+	display: block;
+}
+
+
+svg, figure, button, option {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+
+button {
+	
+    background-color: "blue";
+    border: 0.05em solid;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+	border-radius: 12px;
+
+}
+
