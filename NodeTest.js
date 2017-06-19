@@ -18,11 +18,10 @@ function handleRequest(_request, _response) {
     let query = Url.parse(_request.url, true).query;
     console.log(query);
     let key;
-    for (key in query)
-        console.log(key + ":" + query[key]);
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
-    _response.write("Ich h�re Stimmen!");
+    for (key in query)
+        _response.write(key + ":" + query[key] + "<br>");
     _response.end();
 }
 //# sourceMappingURL=NodeTest.js.map
