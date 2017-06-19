@@ -34,4 +34,7 @@ var SendData;
         }
     }
 })(SendData || (SendData = {}));
+// AJAX - Asynchronous JavaScript and XML sorgen f�r den Benutzerfluss des Servers.
+//Das Objekt "XMLHttpRequest" erm�glich das weitere arbeiten auf dem Server, w�hrend im Hintergrund die bereits vorhandenen Informationen bearbeitet werden.
+//Sprich, man muss nicht immer eine Anfrage senden, damit etwas passiert.
 //# sourceMappingURL=SendData.js.map

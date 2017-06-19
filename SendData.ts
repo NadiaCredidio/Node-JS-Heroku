@@ -38,3 +38,8 @@ namespace SendData {
         }
     }
 }
+
+// AJAX - Asynchronous JavaScript and XML sorgen für den Benutzerfluss des Servers.
+ //Das Objekt "XMLHttpRequest" ermöglich das weitere arbeiten auf dem Server, während im Hintergrund die bereits vorhandenen Informationen bearbeitet werden.
+//Sprich, man muss nicht immer eine Anfrage senden, damit etwas passiert.
+ 
