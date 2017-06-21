@@ -11,63 +11,68 @@
 	<header>
 		<h1>Ice Lover - Online</h1>
 	</header>
-	
+
 	<main>
-		<div>
+	<section>
+		<form action="https://nadias-onlineeis.herokuapp.com" method="get"> 
+			<div>
 
-			<fieldset id="cone">
-				<legend> Behälter </legend>
-			</fieldset>
-			
+				<fieldset id="cone">
+					<legend> Behälter </legend>
+				</fieldset>
 
-			<fieldset id="deliveryOptions">
-				<legend> Lieferoptionen </legend>
-				<select name="delivery" id="delivery">
-				<option value="Abholung"> Abholung</option>
-				<option value="Lieferung">Lieferung</option> 
-				<option value="LieferungAufZeit">Lieferung zu einem Termin</option> 
-				</select>
-			</fieldset>
-	
-	
-			<fieldset id="overview">
-				<legend> Ihre Bestellung </legend>
-				<p id="orderOvervies"></p>
-				<h4>Sum:</h4>
-				<p id="sum"></p>
-       		</fieldset>
-		</div>
-	
-		<section>
-			<fieldset id="flavors">
-				<legend> Eissorten -  1€ pro Kugel</legend>
-			</fieldset>
+
+				<fieldset id="deliveryOptions">
+					<legend> Lieferoptionen </legend>
+					<select name="delivery" id="delivery">
+						<option value="Abholung">Abholung</option>
+						<option value="Lieferung">Lieferung</option>
+						<option value="LieferungAufZeit">Lieferung zu einem
+							Termin</option>
+					</select>
+				</fieldset>
+
+
+				<fieldset id="overview">
+					<legend> Ihre Bestellung </legend>
+					<p id="orderOvervies"></p>
+					<h4>Sum:</h4>
+					<p id="sum"></p>
+				</fieldset>
+			</div>
+
+			<section>
+				<fieldset id="flavors">
+					<legend> Eissorten - 1€ pro Kugel</legend>
+				</fieldset>
 			</section>
 
 
 			<section>
-			<fieldset id="sauces">
-			<legend> Extras -  0.40€ </legend>
-			</fieldset>
+				<fieldset id="sauces">
+					<legend> Extras - 0.40€ </legend>
+				</fieldset>
 			</section>
-			
+
 
 			<section>
-			<fieldset id="Contact">
-				<legend> Kontaktinformationen</legend>
-				Name
-				<input type="text" name="surame" placeholder="Nachname angeben" required id="surname"/>
-				Vorname
-				<input type="text" name="name" placeholder="Vorname angeben" required id="name"/>
-				Straße
-				<input type="text" name="street" placeholder="Straße angeben" required id="street"/>
-				Ort,PLZ
-				<input type="text" name="city, postcode" placeholder="Ort und Postleitzahl angeben" required id="city,postcode"/>
-				Mail
-				<input type="email" name="Mail" placeholder="Email eintragen" id="Email"/>
-			</fieldset>
-	
-			<button name="button" type="button" id="sendOrder">Überprüfen Sie Ihre Bestellung und geben sie diese ab.</button>
-		</section>
+				<fieldset id="Contact">
+					<legend> Kontaktinformationen</legend>
+					Name <input type="text" name="surame"
+						placeholder="Nachname angeben" required id="surname" /> Vorname <input
+						type="text" name="name" placeholder="Vorname angeben" required
+						id="name" /> Straße <input type="text" name="street"
+						placeholder="Straße angeben" required id="street" /> Ort,PLZ <input
+						type="text" name="city, postcode"
+						placeholder="Ort und Postleitzahl angeben" required
+						id="city,postcode" /> Mail <input type="email" name="Mail"
+						placeholder="Email eintragen" id="Email" />
+				</fieldset>
+
+				<button name="button" type="submit" id="sendOrder">Überprüfen
+					Sie Ihre Bestellung und geben sie diese ab.</button>
+			</section>
+	</form>
+	</section>
 	</main>
 </body>	
