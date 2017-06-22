@@ -59,6 +59,7 @@ namespace OnlineEisdealer {
         label.innerText = _flavors;
         label.appendChild(input);
         input.type = "number";
+        input.name = _flavors;
         input.min = "0";
         input.max = "10";
         input.value = "0";
@@ -78,6 +79,7 @@ namespace OnlineEisdealer {
         let input: HTMLInputElement = document.createElement("input");
         label.innerText = _Checkboxen;
         label.appendChild(input);
+        input.name= _Checkboxen;
         input.type = "checkbox"; 
         label.id = _Checkboxen;
         sosse.appendChild(label);
@@ -100,6 +102,7 @@ namespace OnlineEisdealer {
         input.type = "radio";
         input.name = "Radiobutton";
         label.id = _Radiobutton;
+        input.value = _Radiobutton;
         becher.appendChild(label);
         inputCone.push(input);
     }
