@@ -59,6 +59,7 @@ var OnlineEisdealer;
         label.innerText = _Checkboxen;
         label.appendChild(input);
         input.name = _Checkboxen;
+        input.value = _Checkboxen;
         input.type = "checkbox";
         label.id = _Checkboxen;
         sosse.appendChild(label);
@@ -146,14 +147,6 @@ var OnlineEisdealer;
         }
         else {
             cityPostcode.style.backgroundColor = "white";
-        }
-        let mail = document.getElementById("Email");
-        if (mail.validity.valid == false) {
-            check.push("Email \n");
-            mail.style.backgroundColor = "deepskyblue";
-        }
-        else {
-            mail.style.backgroundColor = "white";
         }
         let flavors = 0;
         for (let i = 0; i < inputFlavors.length; i++) {

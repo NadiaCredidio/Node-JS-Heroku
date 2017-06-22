@@ -31,9 +31,34 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
 
-    for (key in query)
-        _response.write(key + ":" + query[key] );
+ /*   for (key in query)
+      /*  _response.write(key + ":" + query[key] ); */
 
+    _response.write("Hallo " + query["Vorname"] + " danke für deine Bestellung" + "<br>" + "Deine Eisauswahl:" + "<br>");
+    
+    _response.write("Peachpuff: " + query["Peachpuff"] + "<br>");
+    _response.write("Unicornswirls: " + query["Unicornswirls"] + "<br>");
+    _response.write("Schokolade: " + query["Schokolade"] + "<br>");
+    _response.write("Kinderschokolade: " + query["Kinderschokolade"] + "<br>");
+    _response.write("Kastanie: " + query["Kastanie"] + "<br>");
+    _response.write("Zitronensorbe: " + query["Zitronensorbe"] + "<br>");
+    _response.write("Yogurt-Kirsch: " + query["Yogurt-Kirsche"] + "<br>");
+    _response.write("Blaubeere: " + query["Blaubeere"] + "<br>");
+    _response.write("Haselnuss: " + query["Haselnuss"] + "<br>");
+
+    
+    
+//    _response.write("Deine Toppingauswahl:" + "<br>" + query["Erdbeersoße"] + "<br>");
+//   
+//    _response.write(" " + query["Streusel"] + "<br>");
+//    _response.write(" " + query["Sahne"] + "<br>");
+//    _response.write(" " + query["Schokosoße"] + "<br>");
+//    
+//    _response.write("Deine Toppingsauswahl " + query["toppings2"] + "<br>");
+    
+    _response.write("Deine Behälterauswahl:" + "<br>" + query["cone"] + "<br>");    
+    _response.write("Die Bestellung geht an:" + "<br>" + query["surname"] + " " + query["name"] + " " + query["street"] + " " + query["postcode"] + " " + query["city"] + "<br>");
+    _response.end();
 
     
     _response.end();

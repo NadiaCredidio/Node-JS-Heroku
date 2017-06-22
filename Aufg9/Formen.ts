@@ -79,7 +79,8 @@ namespace OnlineEisdealer {
         let input: HTMLInputElement = document.createElement("input");
         label.innerText = _Checkboxen;
         label.appendChild(input);
-        input.name= _Checkboxen;
+        input.name = _Checkboxen;
+        input.value = _Checkboxen;
         input.type = "checkbox"; 
         label.id = _Checkboxen;
         sosse.appendChild(label);
@@ -195,16 +196,6 @@ namespace OnlineEisdealer {
         }
         else {
             cityPostcode.style.backgroundColor = "white";
-        }
-
-        
-        let mail: HTMLInputElement = <HTMLInputElement>document.getElementById("Email");
-        if (mail.validity.valid == false) {
-            check.push("Email \n");
-            mail.style.backgroundColor = "deepskyblue";
-        }
-        else {
-            mail.style.backgroundColor = "white";
         }
 
         
