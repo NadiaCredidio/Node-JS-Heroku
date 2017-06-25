@@ -47,17 +47,8 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     _response.write("Haselnuss: " + query["Haselnuss"] + "<br>");
 
     
-    
-//    _response.write("Deine Toppingauswahl:" + "<br>" + query["Erdbeersoﬂe"] + "<br>");
-//   
-//    _response.write(" " + query["Streusel"] + "<br>");
-//    _response.write(" " + query["Sahne"] + "<br>");
-//    _response.write(" " + query["Schokosoﬂe"] + "<br>");
-//    
-//    _response.write("Deine Toppingsauswahl " + query["toppings2"] + "<br>");
-    
     _response.write("Deine Beh‰lterauswahl:" + "<br>" + query["Waffel"] + "<br>");
-    _response.write("Deine Beh‰lterauswahl:" + "<br>" + query["Becher"] + "<br>");       
+    _response.write(query["Becher"] + "<br>");       
     _response.write("Die Bestellung geht an:" + "<br>" + query["surame"] + " " + query["name"] + " " + query["street"] + " " + query["city,postcode"] + "<br>");
     _response.end();
 

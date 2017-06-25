@@ -32,15 +32,8 @@ function handleRequest(_request, _response) {
     _response.write("Yogurt-Kirsch: " + query["Yogurt-Kirsche"] + "<br>");
     _response.write("Blaubeere: " + query["Blaubeere"] + "<br>");
     _response.write("Haselnuss: " + query["Haselnuss"] + "<br>");
-    //    _response.write("Deine Toppingauswahl:" + "<br>" + query["Erdbeerso�e"] + "<br>");
-    //   
-    //    _response.write(" " + query["Streusel"] + "<br>");
-    //    _response.write(" " + query["Sahne"] + "<br>");
-    //    _response.write(" " + query["Schokoso�e"] + "<br>");
-    //    
-    //    _response.write("Deine Toppingsauswahl " + query["toppings2"] + "<br>");
     _response.write("Deine Beh�lterauswahl:" + "<br>" + query["Waffel"] + "<br>");
-    _response.write("Deine Beh�lterauswahl:" + "<br>" + query["Becher"] + "<br>");
+    _response.write(query["Becher"] + "<br>");
     _response.write("Die Bestellung geht an:" + "<br>" + query["surame"] + " " + query["name"] + " " + query["street"] + " " + query["city,postcode"] + "<br>");
     _response.end();
     _response.end();
