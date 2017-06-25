@@ -39,8 +39,9 @@ function handleRequest(_request, _response) {
     //    _response.write(" " + query["Schokoso�e"] + "<br>");
     //    
     //    _response.write("Deine Toppingsauswahl " + query["toppings2"] + "<br>");
-    _response.write("Deine Beh�lterauswahl:" + "<br>" + query["cone"] + "<br>");
-    _response.write("Die Bestellung geht an:" + "<br>" + query["surname"] + " " + query["name"] + " " + query["street"] + " " + query["postcode"] + " " + query["city"] + "<br>");
+    _response.write("Deine Beh�lterauswahl:" + "<br>" + query["Waffel"] + "<br>");
+    _response.write("Deine Beh�lterauswahl:" + "<br>" + query["Becher"] + "<br>");
+    _response.write("Die Bestellung geht an:" + "<br>" + query["surame"] + " " + query["name"] + " " + query["street"] + " " + query["city,postcode"] + "<br>");
     _response.end();
     _response.end();
 }

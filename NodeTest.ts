@@ -56,8 +56,9 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
 //    
 //    _response.write("Deine Toppingsauswahl " + query["toppings2"] + "<br>");
     
-    _response.write("Deine Behälterauswahl:" + "<br>" + query["cone"] + "<br>");    
-    _response.write("Die Bestellung geht an:" + "<br>" + query["surname"] + " " + query["name"] + " " + query["street"] + " " + query["postcode"] + " " + query["city"] + "<br>");
+    _response.write("Deine Behälterauswahl:" + "<br>" + query["Waffel"] + "<br>");
+    _response.write("Deine Behälterauswahl:" + "<br>" + query["Becher"] + "<br>");       
+    _response.write("Die Bestellung geht an:" + "<br>" + query["surame"] + " " + query["name"] + " " + query["street"] + " " + query["city,postcode"] + "<br>");
     _response.end();
 
     
