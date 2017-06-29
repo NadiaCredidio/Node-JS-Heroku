@@ -28,7 +28,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     console.log("Request received");
     let query: AssocStringString = Url.parse(_request.url, true).query;
     var command: string = query["command"];
-
+    console.log(command);
     switch (command) {
         case "insert":
             let student: StudentData = {
@@ -44,6 +44,12 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
                 respond(_response, json);
             });
             break;
+            
+        case "search":
+            let matrikel: string ;
+            console.log("Hello");
+            break;
+            
         default:
             respond(_response, "unknown command: " + command);
             break;

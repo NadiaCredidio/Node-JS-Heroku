@@ -21,6 +21,7 @@ function handleRequest(_request, _response) {
     console.log("Request received");
     let query = Url.parse(_request.url, true).query;
     var command = query["command"];
+    console.log(command);
     switch (command) {
         case "insert":
             let student = {
@@ -35,6 +36,10 @@ function handleRequest(_request, _response) {
             Database.findAll(function (json) {
                 respond(_response, json);
             });
+            break;
+        case "search":
+            let matrikel;
+            console.log("Hello");
             break;
         default:
             respond(_response, "unknown command: " + command);

@@ -4,7 +4,7 @@ var DatabaseClient;
     function init(_event) {
         console.log("Init");
         let insertButton = document.getElementById("insert");
-        let searchSingleButton = document.getElementById("singlestudent");
+        let searchSingleButton = document.getElementById("singlesearch");
         let refreshButton = document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
         searchSingleButton.addEventListener("click", searchSingleStudent);
@@ -20,12 +20,11 @@ var DatabaseClient;
         sendRequest(query, handleInsertResponse);
     }
     function searchSingleStudent(_event) {
-        let students = document.getElementsByTagName("input");
-        let query = "command=insert";
-        query += "&name=" + students[0].value;
-        query += "&firstname=" + students[1].value;
-        query += "&matrikel=" + students[2].value;
+        let matrikelNummer = document.getElementById("matrikelSingleStudent");
+        let query = "command=search";
+        query += "&matrikel=" + matrikelNummer.value;
         console.log(query);
+        sendRequest(query, handleSearchResponse);
     }
     function refresh(_event) {
         let query = "command=find";
@@ -41,6 +40,12 @@ var DatabaseClient;
         xhr.send();
     }
     function handleInsertResponse(_event) {
+        let xhr = _event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            alert(xhr.response);
+        }
+    }
+    function handleSearchResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             alert(xhr.response);

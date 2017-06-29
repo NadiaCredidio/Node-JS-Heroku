@@ -5,7 +5,7 @@ namespace DatabaseClient {
         console.log("Init");
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
         
-        let searchSingleButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("singlestudent");
+        let searchSingleButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("singlesearch");
         
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
@@ -26,12 +26,13 @@ namespace DatabaseClient {
     }
     
         function searchSingleStudent(_event: Event): void {
-        let students: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
-        let query: string = "command=insert";
-        query += "&name=" + students[0].value;
-        query += "&firstname=" + students[1].value;
-        query += "&matrikel=" + students[2].value;
+            
+        let matrikelNummer: HTMLInputElement = <HTMLInputElement>document.getElementById("matrikelSingleStudent");
+        let query: string = "command=search";
+       
+        query += "&matrikel=" + matrikelNummer.value;
         console.log(query);
+        sendRequest(query, handleSearchResponse);
     }
     
 
@@ -53,6 +54,13 @@ namespace DatabaseClient {
     }
 
     function handleInsertResponse(_event: ProgressEvent): void {
+        let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            alert(xhr.response);
+        }
+    }
+    
+    function handleSearchResponse(_event: ProgressEvent): void {
         let xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
             alert(xhr.response);
