@@ -4,8 +4,14 @@ namespace DatabaseClient {
     function init(_event: Event): void {
         console.log("Init");
         let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
+        
+        let searchSingleButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("singlestudent");
+        
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
+        
+        searchSingleButton.addEventListener("click", searchSingleStudent);
+        
         refreshButton.addEventListener("click", refresh);
     }
 
@@ -18,6 +24,16 @@ namespace DatabaseClient {
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }
+    
+        function searchSingleStudent(_event: Event): void {
+        let students: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+        let query: string = "command=insert";
+        query += "&name=" + students[0].value;
+        query += "&firstname=" + students[1].value;
+        query += "&matrikel=" + students[2].value;
+        console.log(query);
+    }
+    
 
     function refresh(_event: Event): void {
         let query: string = "command=find";

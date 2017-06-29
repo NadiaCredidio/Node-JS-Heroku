@@ -4,8 +4,10 @@ var DatabaseClient;
     function init(_event) {
         console.log("Init");
         let insertButton = document.getElementById("insert");
+        let searchSingleButton = document.getElementById("singlestudent");
         let refreshButton = document.getElementById("refresh");
         insertButton.addEventListener("click", insert);
+        searchSingleButton.addEventListener("click", searchSingleStudent);
         refreshButton.addEventListener("click", refresh);
     }
     function insert(_event) {
@@ -16,6 +18,14 @@ var DatabaseClient;
         query += "&matrikel=" + inputs[2].value;
         console.log(query);
         sendRequest(query, handleInsertResponse);
+    }
+    function searchSingleStudent(_event) {
+        let students = document.getElementsByTagName("input");
+        let query = "command=insert";
+        query += "&name=" + students[0].value;
+        query += "&firstname=" + students[1].value;
+        query += "&matrikel=" + students[2].value;
+        console.log(query);
     }
     function refresh(_event) {
         let query = "command=find";
