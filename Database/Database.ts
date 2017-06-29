@@ -32,6 +32,18 @@ function handleInsert(_e: Mongo.MongoError): void {
     console.log("Database insertion returned -> " + _e);
 }
 
+export function findSingle(_matrikel: number,_callback: Function): void {
+    var cursor: Mongo.Cursor = students.find(); //so abändern, dass nur einer gefunden wird --> matrikel
+    cursor.toArray(prepareAnswer);
+
+    function prepareAnswer(_e: Mongo.MongoError, studentArray: StudentData[]): void {
+        if (_e)
+            _callback("Error" + _e);
+        else
+            _callback(JSON.stringify(studentArray));
+    }
+}
+
 
 export function findAll(_callback: Function): void {
     var cursor: Mongo.Cursor = students.find();

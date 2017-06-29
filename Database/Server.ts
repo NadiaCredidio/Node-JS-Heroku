@@ -46,8 +46,12 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
             break;
             
         case "search":
-            let matrikel: string ;
+            let matrikel: number = {matrikel: parseInt(query["matrikel"])}; //wert zuweisen
+            Database.findSingle(matrikel, function(json: string): void {
+                respond(_response, json);
+            });
             console.log("Hello");
+            
             break;
             
         default:

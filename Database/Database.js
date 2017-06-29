@@ -27,6 +27,17 @@ exports.insert = insert;
 function handleInsert(_e) {
     console.log("Database insertion returned -> " + _e);
 }
+function findSingle(_matrikel, _callback) {
+    var cursor = students.find(); //so ab�ndern, dass nur einer gefunden wird --> matrikel
+    cursor.toArray(prepareAnswer);
+    function prepareAnswer(_e, studentArray) {
+        if (_e)
+            _callback("Error" + _e);
+        else
+            _callback(JSON.stringify(studentArray));
+    }
+}
+exports.findSingle = findSingle;
 function findAll(_callback) {
     var cursor = students.find();
     cursor.toArray(prepareAnswer);
