@@ -44,8 +44,7 @@ namespace DatabaseClient {
         xhr.open("GET", "http://localhost:8100?" + _query, true);
         //asynchroner verlauf, die verschiedenen Dinge arbeiten parallel 
         //oder werden erst fortgesetzt sobald etwas passiert z.B. Event
-        
-        
+
         //xhr.open("GET", "https://eia2-servertest.herokuapp.com?color=" + _color, true);
         xhr.addEventListener("readystatechange", _callback);
         xhr.send();
