@@ -3,15 +3,11 @@ namespace DatabaseClient {
 
     function init(_event: Event): void {
         console.log("Init");
-        let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");
-        
-        let searchSingleButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("singlesearch");
-        
+        let insertButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("insert");       
+        let searchSingleButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("singlesearch");       
         let refreshButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("refresh");
-        insertButton.addEventListener("click", insert);
-        
-        searchSingleButton.addEventListener("click", searchSingleStudent);
-        
+        insertButton.addEventListener("click", insert);       
+        searchSingleButton.addEventListener("click", searchSingleStudent);        
         refreshButton.addEventListener("click", refresh);
     }
 
@@ -25,6 +21,12 @@ namespace DatabaseClient {
         sendRequest(query, handleInsertResponse);
     }
     
+    
+        function refresh(_event: Event): void {
+        let query: string = "command=find";
+        sendRequest(query, handleFindResponse);
+    }
+    
         function searchSingleStudent(_event: Event): void {
             
         let matrikelNummer: HTMLInputElement = <HTMLInputElement>document.getElementById("matrikelSingleStudent");
@@ -36,10 +38,6 @@ namespace DatabaseClient {
     }
     
 
-    function refresh(_event: Event): void {
-        let query: string = "command=find";
-        sendRequest(query, handleFindResponse);
-    }
 
     function sendRequest(_query: string, _callback: EventListener): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();

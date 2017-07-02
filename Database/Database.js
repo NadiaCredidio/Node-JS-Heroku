@@ -28,7 +28,7 @@ function handleInsert(_e) {
     console.log("Database insertion returned -> " + _e);
 }
 function findSingle(_matrikel, _callback) {
-    var cursor = students.find(); //so ab�ndern, dass nur einer gefunden wird --> matrikel
+    var cursor = students.find(_matrikel); //so ab�ndern, dass nur einer gefunden wird --> matrikel
     cursor.toArray(prepareAnswer);
     function prepareAnswer(_e, studentArray) {
         if (_e)

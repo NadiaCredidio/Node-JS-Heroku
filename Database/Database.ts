@@ -33,7 +33,7 @@ function handleInsert(_e: Mongo.MongoError): void {
 }
 
 export function findSingle(_matrikel: number,_callback: Function): void {
-    var cursor: Mongo.Cursor = students.find(); //so abändern, dass nur einer gefunden wird --> matrikel
+    var cursor: Mongo.Cursor = students.find(_matrikel); //so abändern, dass nur einer gefunden wird --> matrikel
     cursor.toArray(prepareAnswer);
 
     function prepareAnswer(_e: Mongo.MongoError, studentArray: StudentData[]): void {

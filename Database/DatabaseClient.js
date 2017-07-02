@@ -19,16 +19,16 @@ var DatabaseClient;
         console.log(query);
         sendRequest(query, handleInsertResponse);
     }
+    function refresh(_event) {
+        let query = "command=find";
+        sendRequest(query, handleFindResponse);
+    }
     function searchSingleStudent(_event) {
         let matrikelNummer = document.getElementById("matrikelSingleStudent");
         let query = "command=search";
         query += "&matrikel=" + matrikelNummer.value;
         console.log(query);
         sendRequest(query, handleSearchResponse);
-    }
-    function refresh(_event) {
-        let query = "command=find";
-        sendRequest(query, handleFindResponse);
     }
     function sendRequest(_query, _callback) {
         let xhr = new XMLHttpRequest();
