@@ -38,7 +38,10 @@ function handleRequest(_request, _response) {
             });
             break;
         case "search":
-            let matrikel;
+            let matrikel = parseInt(query["matrikel"]); //wert zuweisen
+            Database.findSingle(matrikel, function (json) {
+                respond(_response, json);
+            });
             console.log("Hello");
             break;
         default:
