@@ -57,7 +57,7 @@ var DatabaseClient;
     function handleFindResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let output = document.getElementsByTagName("textarea")[0];
+            let output = document.getElementsByTagName("textarea")[1];
             output.value = xhr.response;
             let responseAsJson = JSON.parse(xhr.response);
             console.log(responseAsJson);
